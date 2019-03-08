@@ -2,11 +2,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.JComponent;
+import javax.swing.Timer;
 
 
 /*
@@ -17,7 +19,7 @@ import javax.swing.JComponent;
  * -Make an arraylist to hold all of the balls
  * -Add the balls to the array list when spacebar is pressed, and then update
  */
-public class Main extends JComponent 
+public class Main extends JComponent implements ActionListener
 {
 	private Ellipse2D.Double head;
 	private Rectangle rightLeg, leftLeg, torso, arms;
@@ -65,9 +67,9 @@ public class Main extends JComponent
 		dy = a;
 	}
 
+	public void update()
+	{
+		setLocation(getX() + dx, getY() + dy);
+	}
 	
-	
-
-	
-	
-}
+	}
