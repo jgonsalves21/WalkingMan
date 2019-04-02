@@ -17,7 +17,7 @@ public class Game extends JFrame implements ActionListener
 	
 	public Game()
 	{
-		setBounds(50,50, 800, 600);
+		setBounds(100, 100, 800, 800);
 		setTitle("Game");
 		setLayout(null);
 		setFocusable(true);
@@ -25,7 +25,7 @@ public class Game extends JFrame implements ActionListener
 		Timer t1 = new Timer(5, this);
 		t1.start();
 		
-		man.setBounds(x,y,100,100);
+		man.setBounds(x, y, 200, 200);
 		add(man);
 		
 		addKeyListener(new KeyListener()
@@ -92,21 +92,29 @@ public class Game extends JFrame implements ActionListener
 		{
 			man.setLocation(50, man.getY());
 		}
-		else if (man.getX >= 650)
+		else if (man.getX >= 750)
 		{
-			man.setLocation(650, man.getY());
+			man.setLocation(750, man.getY());
 		}
 		else if (man.getY() <= 100)
 		{
-			man.setLocation(man.getX(), 100));
+			man.setLocation(man.getX(), 100);
 		}
-		else if (man.g)
+		else if (man.getY() <= 700)
+		{
+			man.setLocation(man.getX(), 100);
+		}
+		
+		man.update();
+		ball.shoot();
+		repaint();
 	}
+	
 	
 	
 	public static void main(String[] args)
 	{
-		Game game = new  Game();
+		Game game1 = new  Game();
 	}
 	
 }
